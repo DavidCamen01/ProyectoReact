@@ -1,0 +1,75 @@
+/* Contenedor principal de la aplicación de inicio */
+.homeapp-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 70px; /* Mantiene el espacio para el Navbar */
+}
+
+.carousel-img {
+    width: 100%;
+    /* CAMBIO CLAVE AQUÍ: Eliminamos la altura fija y dejamos que se ajuste automáticamente */
+    /* Puedes probar con `height: auto;` o simplemente eliminar la propiedad `height` si está definida en otro lugar */
+    height: auto; /* La altura se ajustará automáticamente según el ancho y la relación de aspecto */
+    object-fit: contain; /* Asegura que la imagen completa se vea */
+    /* Opcional: Si aún ves un pequeño espacio, puedes intentar con 'object-fit: fill;'
+       pero podría distorsionar la imagen si la relación de aspecto no es la ideal.
+       'contain' es generalmente más seguro para mantener la calidad visual. */
+    /* Para que el fondo del carrusel no se vea detrás de las barras (si el "contain" las crea, lo cual es menos probable sin una altura fija) */
+    background-color: transparent; /* O el color de tu fondo principal */
+}
+
+/* El resto de tu CSS permanece igual */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px 30px;
+    max-width: 600px;
+    margin: auto;
+    bottom: 15%; /* Mantiene el caption sobre la imagen */
+}
+
+.carousel-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.carousel-text {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.featured-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 40px;
+}
+
+.featured-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+.featured-grid img {
+    width: 100%;
+    max-width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.featured-grid img:hover {
+    transform: scale(1.05);
+}

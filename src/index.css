@@ -1,0 +1,54 @@
+/* --- index.css MODIFICADO --- */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  /* Aseguramos que la base ocupe el 100% de la ventana */
+  width: 100%;
+  height: 100%; 
+  overflow-x: hidden; /* Importante para evitar scroll horizontal */
+}
+
+body {
+  /* ¡ELIMINAMOS el padding-top! Esto hará que el login (y cualquier vista no Home)
+     pueda comenzar desde arriba de la ventana si es necesario. */
+  /* padding-top: 70px; <-- ¡QUITADO! */
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ----------------------------------------------------------------------- */
+/* --- AJUSTE ADICIONAL NECESARIO EN Login.css Y Homeapp.css --- */
+
+/* 1. En tu Homeapp.css, debes mantener el padding-top para el contenido principal: */
+/*
+.homeapp-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 70px;  <-- ESTO DEBE MANTENERSE AQUÍ, NO EN EL BODY
+}
+*/
+
+/* 2. En tu Login.css, asegúrate de que el contenedor de la página tome el control total: */
+/*
+.login-page-container {
+    // ... (otras reglas de fondo)
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed; // O ABSOLUTE, dependiendo de si quieres que se mueva con el scroll o no
+    top: 0;
+    left: 0;
+    z-index: 999; // Para estar justo debajo del Navbar si es fijo, o por encima de todo el contenido de la página si es una vista completa.
+}
+*/
